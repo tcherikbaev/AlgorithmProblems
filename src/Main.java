@@ -17,6 +17,11 @@ public class Main {
         {
             System.out.print(i +" ");
         }
+        System.out.println("****************************************************");
+        //151. Reverse Words in a String
+        String word="Hello Tilek";
+        String reverse= ReverseString.reverseWords(word);
+        System.out.println(reverse);
     }
 
 }
