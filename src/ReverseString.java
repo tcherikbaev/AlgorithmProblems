@@ -10,13 +10,13 @@ public class ReverseString {
         return String.join(" ", words);
     }
 
-    private static void reverseArray(String[] arr) {
+    private static void reverseArray(String[] str) {
         int start = 0;
-        int end = arr.length - 1;
+        int end = str.length - 1;
         while (start < end) {
-            String temp = arr[start];
-            arr[start] = arr[end];
-            arr[end] = temp;
+            String temp = str[start];
+            str[start] = str[end];
+            str[end] = temp;
             start++;
             end--;
         }
