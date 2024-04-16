@@ -20,7 +20,7 @@ public class Main {
         System.out.println("****************************************************");
         //151. Reverse Words in a String
 
-        String word="a good   example";
+        String word="a good   example for";
         String reverse= ReverseString.reverseWords(word);
         System.out.println("Problem #151 'Reverse Words in a Strings' : ");
         System.out.println(reverse);
