@@ -1,5 +1,5 @@
 public class SortColors {
-    public void sortColors(int[] nums) {
+    public static void sortColors(int[] nums) {
         int red = 0; // Pointer for the end of the red section
         int blue = nums.length - 1; // Pointer for the start of the blue section
         int i = 0; // Pointer to iterate through the array
@@ -18,7 +18,7 @@ public class SortColors {
         }
 
     }
-    private void swap(int[] nums, int i, int j) {
+    private static void swap(int[] nums, int i, int j) {
         int temp = nums[i];
         nums[i] = nums[j];
         nums[j] = temp;
