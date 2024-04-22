@@ -26,7 +26,7 @@ public class Main {
         System.out.println("Problem #151 'Reverse Words in a Strings' : ");
         System.out.println(reverse);
         //75. Sort Colors
-        int[] numsArr = {0, 0, 2, 1, 1,2};
+        int[] numsArr = {0, 0, 2, 1, 1,2,1,0,2,0,0};
         SortColors.sortColors(numsArr);
         System.out.println("Problem #75 'Sort Colors' : ");
         System.out.println(Arrays.toString(numsArr));
