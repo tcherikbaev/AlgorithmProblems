@@ -30,6 +30,11 @@ public class Main {
         SortColors.sortColors(numsArr);
         System.out.println("Problem #75 'Sort Colors' : ");
         System.out.println(Arrays.toString(numsArr));
+        //268. Missing Number
+        int[] missArr = {9,6,4,2,3,5,7,0,1};
+        int missNumber=MissingNumber.missingNum(missArr);
+        System.out.println("268. Missing Number' : ");
+        System.out.println(missNumber);
     }
 
 }

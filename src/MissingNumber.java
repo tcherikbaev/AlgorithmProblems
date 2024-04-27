@@ -1,5 +1,5 @@
 public class MissingNumber {
-    public int missingNum(int[] nums) {
+   static public int missingNum(int[] nums) {
         int n = nums.length;
 
         int expectedSum = n * (n + 1) / 2;
