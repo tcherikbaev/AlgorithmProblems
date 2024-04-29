@@ -34,7 +34,7 @@ public class Main {
         int[] missArr = {9,6,4,2,3,5,7,0,1};
         int missNumber=MissingNumber.missingNum(missArr);
         System.out.println("268. Missing Number' : ");
-        System.out.println(missNumber);
+        System.out.println("Miss Number: " +missNumber);
     }
 
 }
