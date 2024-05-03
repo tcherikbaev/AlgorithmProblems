@@ -18,6 +18,6 @@ public class Hanoi {
         hanoitower(n-1,s,i,f);
         System.out.println(s+" "+f);
         hanoitower(n-1,i,f,s);
-
+        return;
     }
 }
