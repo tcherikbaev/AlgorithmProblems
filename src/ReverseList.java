@@ -16,7 +16,7 @@ public class ReverseList {
         head = reverseList(head);
 
         // Print reversed list
-        System.out.println("\nReversed list:");
+        System.out.println("\nReversed Singly Linked list:");
         printList(head);
     }
 
