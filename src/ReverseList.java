@@ -9,7 +9,7 @@ public class ReverseList {
         head.next.next.next.next = new ListNode(5);
 
         // Print original list
-        System.out.println("Original list:");
+        System.out.println("Original Singly Linked list:");
         printList(head);
 
         // Reverse the list
