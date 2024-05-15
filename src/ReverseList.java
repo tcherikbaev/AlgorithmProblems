@@ -2,14 +2,14 @@ public class ReverseList {
     public static void main(String []strings)
     {
         // Create a linked list for testing
-        ListNode head = new ListNode(1);
-        head.next = new ListNode(2);
-        head.next.next = new ListNode(3);
-        head.next.next.next = new ListNode(4);
-        head.next.next.next.next = new ListNode(5);
+        ListNode head = new ListNode(17);
+        head.next = new ListNode(18);
+        head.next.next = new ListNode(19);
+        head.next.next.next = new ListNode(20);
+        head.next.next.next.next = new ListNode(21);
 
         // Print original list
-        System.out.println("Original Singly Linked list:");
+        System.out.println("\nOriginal Singly Linked list:");
         printList(head);
 
         // Reverse the list
