@@ -20,6 +20,17 @@ public class MyLinkedList<T> {
         }
         System.out.println();
 
+        // Add elements at specific indices
+        myList.addAtIndex(1, 7); // Add 7 at index 1
+        myList.addAtIndex(4, 22); // Add 22 at index 4
+
+        // Print the elements of the list after addition
+        System.out.println("Elements of the list after addition:");
+        for (int i = 0; i < myList.size; i++) {
+            System.out.print(myList.get(i) + " ");
+        }
+        System.out.println();
+
         // Delete elements at specific indices
         myList.deleteAtIndex(1); // Delete element at index 1
         myList.deleteAtIndex(3); // Delete element at index 3
@@ -124,6 +135,27 @@ public class MyLinkedList<T> {
 
         }
         size--;
+    }
+    public void addAtIndex(int index, T val) {
+        if (index < 0 || index > size) {
+            return; // Index out of bounds
+        }
+        if (index == size) { // Add at tail
+            addAtTail(val);
+        } else if (index == 0) { // Add at head
+            addAtHead(val);
+        } else {
+            Node<T> newNode = new Node<>(val);
+            Node<T> current = head;
+            for (int i = 0; i < index - 1; i++) {
+                current = current.next;
+            }
+            newNode.next = current.next;
+            current.next.prev = newNode;
+            current.next = newNode;
+            newNode.prev = current;
+            size++;
+        }
     }
 
 
