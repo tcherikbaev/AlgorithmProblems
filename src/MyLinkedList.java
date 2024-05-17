@@ -1,6 +1,5 @@
 public class MyLinkedList<T> {
     public static void main(String[] args) {
-        // Create a new instance of MyLinkedList
         MyLinkedList<Integer> myList = new MyLinkedList<>();
 
         // Add elements at head
@@ -20,22 +19,18 @@ public class MyLinkedList<T> {
         }
         System.out.println();
 
-        // Add elements at specific indices
-        myList.addAtIndex(1, 7); // Add 7 at index 1
-        myList.addAtIndex(4, 22); // Add 22 at index 4
+        myList.addAtIndex(1, 7);
+        myList.addAtIndex(4, 22);
 
-        // Print the elements of the list after addition
         System.out.println("Elements of the list after addition:");
         for (int i = 0; i < myList.size; i++) {
             System.out.print(myList.get(i) + " ");
         }
         System.out.println();
 
-        // Delete elements at specific indices
-        myList.deleteAtIndex(1); // Delete element at index 1
-        myList.deleteAtIndex(3); // Delete element at index 3
 
-        // Print the elements of the list after deletion
+        myList.deleteAtIndex(1);
+        myList.deleteAtIndex(3);
         System.out.println("Elements of the list after deletion:");
         for (int i = 0; i < myList.size; i++) {
             System.out.print(myList.get(i) + " ");
