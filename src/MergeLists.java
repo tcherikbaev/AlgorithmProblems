@@ -23,9 +23,10 @@ public class MergeLists {
 
         if (list1 != null) {
             current.next = list1;
-        } else if (list2 != null) {
+        } else
+         {
             current.next = list2;
-        }
+         }
 
         return dummy.next;
     }
