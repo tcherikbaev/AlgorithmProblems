@@ -18,6 +18,17 @@ public class CycleList {
           boolean hasCycle1 = hasCycle(head1);
           System.out.println("Linked list 1 has cycle: " + hasCycle1);
 
+          // Create a linked list with a cycle
+          ListNode head2 = new ListNode(1);
+          head2.next = new ListNode(2);
+          head2.next.next = new ListNode(3);
+          head2.next.next.next = new ListNode(4);
+          head2.next.next.next.next = head2.next;
+
+          // Test for a linked list with a cycle
+          boolean hasCycle2 = hasCycle(head2);
+          System.out.println("Linked list 2 has cycle: " + hasCycle2);
+
 
       }
     public static boolean hasCycle(ListNode head) {
