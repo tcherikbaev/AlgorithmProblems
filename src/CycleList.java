@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class CycleList {
      static class ListNode {
      int val;
@@ -60,5 +62,26 @@ public class CycleList {
       }
       return head;
     }
+    public static ListNode RemoveMiddleNode(ListNode head)
+    {
+        ListNode slow=head;
+        ListNode fast=head;
+        ListNode prev=null;
+        while(fast!=null && fast.next!=null)
+        {
+            prev=slow;
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+        if(prev!=null)
+        {
+            prev.next=slow.next;
+        }
+        else
+        {
+            head=head.next;
+        }
+        return head;
     }
+        }
 
