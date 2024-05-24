@@ -13,7 +13,9 @@ public class CycleList {
         ListNode head = createLinkedList(values);
         System.out.print("Original List: ");
         printLinkedList(head);
-
+        System.out.print("Odd Indexed and Even indexed list: ");
+        ListNode evenList=oddEvenList(head);
+        printLinkedList(evenList);
         // Check for cycle
         System.out.println("Has Cycle: " + hasCycle(head));
 
@@ -141,7 +143,7 @@ public class CycleList {
         node.val = node.next.val;
         node.next = node.next.next;
     }
-    public ListNode oddEvenList(ListNode head) {
+    public static ListNode oddEvenList(ListNode head) {
         if(head==null || head.next==null) return head;
         ListNode odd=head;
         ListNode even=head.next;
@@ -156,8 +158,6 @@ public class CycleList {
         odd.next=evenHead;
 
         return head;
-
-    }
 
     }
 }
