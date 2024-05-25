@@ -1,3 +1,7 @@
+import org.w3c.dom.ls.LSInput;
+
+import java.util.List;
+
 public class CycleList {
     static class ListNode {
         int val;
@@ -159,5 +163,42 @@ public class CycleList {
 
         return head;
 
+    }
+    public ListNode reverseKGroup(ListNode head, int k) {
+        ListNode dummy=new ListNode(0);
+        dummy.next=head;
+        ListNode prevGroupTail=dummy;
+        while(head!=null)
+        {
+            int count=0;
+            ListNode current=head;
+            while(current!=null&&count<k)
+            {
+                current=current.next;
+                count++;
+            }
+            if(count<k) break;
+
+            ListNode nextGroupHead=current;
+            ListNode reverseGroupHead=reverseSublist(head,k);
+            prevGroupTail.next=reverseGroupHead;
+            prevGroupTail=head;
+            head.next=nextGroupHead;
+            head=nextGroupHead;
+        }
+        return dummy.next;
+    }
+    public ListNode reverseSublist(ListNode head, int k) {
+        ListNode prev=null;
+        ListNode current=head;
+        ListNode next=null;
+       for(int i=0;i<k;i++)
+       {
+           next=current.next;
+           current.next=prev;
+           prev=current;
+           current=next;
+       }
+       return prev;
     }
 }
