@@ -17,6 +17,12 @@ public class CycleList {
         ListNode head = createLinkedList(values);
         System.out.print("Original List: ");
         printLinkedList(head);
+        int k = 2;
+        ListNode reversedHead = reverseKGroup(head, k);
+
+        System.out.println("\nLinked List after reversing nodes in groups of " + k + ":");
+        printLinkedList(reversedHead);
+
         System.out.print("Odd Indexed and Even indexed list: ");
         ListNode evenList=oddEvenList(head);
         printLinkedList(evenList);
@@ -164,7 +170,7 @@ public class CycleList {
         return head;
 
     }
-    public ListNode reverseKGroup(ListNode head, int k) {
+    public static ListNode reverseKGroup(ListNode head, int k) {
         ListNode dummy=new ListNode(0);
         dummy.next=head;
         ListNode prevGroupTail=dummy;
@@ -188,7 +194,7 @@ public class CycleList {
         }
         return dummy.next;
     }
-    public ListNode reverseSublist(ListNode head, int k) {
+    public static ListNode reverseSublist(ListNode head, int k) {
         ListNode prev=null;
         ListNode current=head;
         ListNode next=null;
