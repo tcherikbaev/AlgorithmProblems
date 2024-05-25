@@ -1,6 +1,7 @@
 import org.w3c.dom.ls.LSInput;
 
 import java.util.List;
+import java.util.PriorityQueue;
 
 public class CycleList {
     static class ListNode {
@@ -206,5 +207,32 @@ public class CycleList {
            current=next;
        }
        return prev;
+    }
+    public ListNode mergeKLists(ListNode[] lists) {
+        if(lists==null || lists.length==0) return null;
+
+        PriorityQueue<ListNode> minHeap=new PriorityQueue<ListNode>((a,b)->a.val-b.val);
+        for(ListNode head: lists)
+        {
+            if(head!=null)
+            {
+                minHeap.add(head);
+            }
+        }
+        ListNode dummy=new ListNode(0);
+        ListNode current=dummy;
+
+        while (!minHeap.isEmpty())
+        {
+            ListNode smallestNode=minHeap.poll();
+            current.next=smallestNode;
+            current=current.next;
+
+            if(smallestNode.next!=null)
+            {
+                minHeap.add(smallestNode.next);
+            }
+        }
+        return dummy.next;
     }
 }
