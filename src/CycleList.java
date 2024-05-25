@@ -14,6 +14,26 @@ public class CycleList {
     }
 
     public static void main(String[] args) {
+        // Create example linked lists
+        ListNode list1 = new ListNode(1);
+        list1.next = new ListNode(4);
+        list1.next.next = new ListNode(5);
+
+        ListNode list2 = new ListNode(1);
+        list2.next = new ListNode(3);
+        list2.next.next = new ListNode(4);
+
+        ListNode list3 = new ListNode(2);
+        list3.next = new ListNode(6);
+
+        ListNode[] lists = new ListNode[] {list1, list2, list3};
+
+        // Merge k sorted lists
+        ListNode mergedHead = mergeKLists(lists);
+        System.out.println("Print the merged linked list");
+        printLinkedList(mergedHead);
+
+        /////////////////////////////////////////////
         int[] values = {1, 2, 3, 4, 5};
         ListNode head = createLinkedList(values);
         System.out.print("Original List: ");
@@ -208,7 +228,7 @@ public class CycleList {
        }
        return prev;
     }
-    public ListNode mergeKLists(ListNode[] lists) {
+    public static ListNode mergeKLists(ListNode[] lists) {
         if(lists==null || lists.length==0) return null;
 
         PriorityQueue<ListNode> minHeap=new PriorityQueue<ListNode>((a,b)->a.val-b.val);
