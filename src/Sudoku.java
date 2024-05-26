@@ -1,18 +1,36 @@
+import java.util.HashSet;
+
 public class Sudoku {
 
 
     public static void main(String [] strings)
     {
 
+        char[][] board = {
+                {'5', '3', '.', '.', '7', '.', '.', '.', '.'},
+                {'6', '.', '.', '1', '9', '5', '.', '.', '.'},
+                {'.', '9', '8', '.', '.', '.', '.', '6', '.'},
+                {'8', '.', '.', '.', '6', '.', '.', '.', '3'},
+                {'4', '.', '.', '8', '.', '3', '.', '.', '1'},
+                {'7', '.', '.', '.', '2', '.', '.', '.', '6'},
+                {'.', '6', '.', '.', '.', '.', '2', '8', '.'},
+                {'.', '.', '.', '4', '1', '9', '.', '.', '5'},
+                {'.', '.', '.', '.', '8', '.', '.', '7', '9'}
+        };
+
+        // Check if the board is valid
+        boolean isValid = isValidSudoku(board);
+        boolean isHasSetValid=isValidSudokuWithHashSet(board);
+        System.out.println("Is the Sudoku board valid? " + isValid+" " +isHasSetValid);
     }
     public static boolean isValidSudoku(char[][] board) {
     boolean [][] row=new boolean[9][9];
     boolean [][] column=new boolean[9][9];
     boolean [][] grid=new boolean[9][9];
 
-    for (int i=0;i<board.length;i++)
+    for (int i=0;i<9;i++)
     {
-        for(int j=0;j<board[i].length;j++)
+        for(int j=0;j<9;j++)
         {
             if(board[i][j]!='.')
             {
@@ -23,7 +41,7 @@ public class Sudoku {
                     return false;
                 }
                 row[i][num]=true;
-                column[num][j]=true;
+                column[j][num]=true;
                 grid[gridIndex][num]=true;
             }
         }
@@ -31,5 +49,26 @@ public class Sudoku {
     return true;
     }
 
+    public static boolean isValidSudokuWithHashSet(char[][] board)
+    {
+        HashSet<String> set=new HashSet<>();
+        for (int i=0;i<board.length;i++)
+        {
+            for(int j=0;j<board[0].length;j++)
+            {
+                char cur=board[i][j];
+                if(cur!='.')
+                {
+                    if(!set.add("row"+i+cur)||
+                       !set.add("col"+j+cur)||
+                       !set.add("grid"+i/3+j/3+cur))
+                    {
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
+    }
 
 }
